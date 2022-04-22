@@ -1,0 +1,37 @@
+# QUEUE-queue-implementation-using-linked-list.
+
+public class Main {
+    public static void main(String[] args) {
+        
+            Queue < Integer > que = new  LinkedList <>();
+            que.add(100);
+            que.add(200);
+            que.add(300);
+            que.add(400);
+            que.add(500);
+            
+            System.out.println(que);
+            System.out.println( "size of the queue is:" + que.size());
+            
+            System.out.println(  "removing element is: " +  que.remove());
+
+            
+            
+            System.out.println("polling element is :" + que.poll() );
+            
+            
+            System.out.println("queue is empty :" + que.isEmpty() );
+    }
+}
+
+output = 
+[100, 200, 300, 400, 500]
+size of the queue is:5
+removing element is: 100
+polling element is :200
+queue is empty :false
+        
+time complexity = O(1).
+
+        remove():> throw an no such element exception (null pointer exception).
+        poll()  :> it does not throw an null pointer exception.
