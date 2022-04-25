@@ -1,3 +1,7 @@
+
+// DEQUE:>  MINIMUM ELEMENTS IN THE FIXED SIZE WINDOW .
+
+
 public class Main {
     public static void main(String[] args) {
     
