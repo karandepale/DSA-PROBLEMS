@@ -1,3 +1,7 @@
+//FINDING DUPLICACY OF CHARACTER IN THE STRING.
+
+
+
 public class Main {
     public static void main(String[] args) {
         
