@@ -1,0 +1,49 @@
+
+class Node{
+        
+        int x ;
+        Node next;
+        
+        Node( int x){
+                this.x = x;
+        }
+}
+
+
+
+class Main {
+        public static void main (String[] args){
+                Node head = new Node(10);
+                head.next = new Node(20);
+                head.next.next = new Node(30);
+                head.next.next.next = head.next;
+                
+                boolean ans = loopcheck(head);
+                System.out.println(ans);
+        }
+        
+        
+        
+        public static boolean loopcheck(Node head){
+                if(head == null){
+                        return false;
+                }
+                
+                Node slow = head;
+                Node fast = head;
+                
+                while(slow != null  &&  slow.next != null  &&  fast.next != null){
+                        slow = slow.next;
+                        fast = fast.next.next;
+                        
+                        if(slow == fast){
+                                return true;
+                        }
+                }
+                                return false;
+                        
+                }
+        }
+
+
+output = true
