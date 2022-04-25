@@ -1,3 +1,7 @@
+
+//Find the number of substrings of length K winow in which the number of zeroes are greater or equal to the number of ones.
+
+
 public class Main {
     public static void main(String[] args) {
        
