@@ -1,3 +1,6 @@
+//DEQUE :> SUM OF MINIMUM AND MAXIMUM ELEMENTS IN EVERY FIXED SIZE WINDOW .
+
+
 public class Main {
     public static void main(String[] args) {
        
