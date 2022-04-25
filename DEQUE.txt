@@ -1,0 +1,60 @@
+public class Main {
+    public static void main(String[] args) {
+    
+    Scanner sc = new Scanner(System.in);
+            int n = sc.nextInt();
+            
+            int[] arr = new int[n];
+            System.out.println("Input array is: ");
+            for(int i=0;   i<n;   i++){
+                    arr[i] = sc.nextInt();
+                    System.out.print(arr[i] +" ");
+            }
+            System.out.println();
+            
+            int k = sc.nextInt();
+            System.out.println("window size is:" + k);
+            
+            System.out.println("minimum elements is:>");
+            
+            Deque < Integer > minq = new LinkedList <Integer> ();
+            for(int i=0;   i<k;   i++){
+                    while( !minq.isEmpty()    &&    arr[i]<=arr[minq.peekLast()]  ){
+                            minq.pollLast();
+                    }
+                    minq.add(i);
+            }
+            
+            for(int i=k;   i<arr.length;   i++){
+                    System.out.print(arr[minq.peekFirst()] +" ");
+                    
+                    
+                    while( !minq.isEmpty()   &&  minq.peekFirst() <= i-k ){
+                            minq.pollFirst();
+                    }
+                    
+                    
+                     while( !minq.isEmpty()    &&    arr[i]<=arr[minq.peekLast()]  ){
+                            minq.pollLast();
+                    }
+                    minq.add(i);
+            }
+            
+             System.out.print(arr[minq.peekFirst()] +" ");
+    
+    }
+}
+
+
+Time complexity : O(N).
+
+Input array is: 
+3 5 1 9 2 10 11
+        
+window size is:3
+        
+minimum elements are:>
+1 1 1 2 2 
+        
+    
+
