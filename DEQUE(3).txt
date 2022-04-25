@@ -1,0 +1,61 @@
+public class Main {
+    public static void main(String[] args) {
+       
+           int[] arr = {2, 5, -1, 7, -3, -1, -2} ; 
+           int k = 4;
+//Output : 18
+            
+            
+            Deque < Integer > min = new LinkedList<Integer> ();
+            Deque < Integer > max = new LinkedList<Integer> ();
+            
+            for(int i=0;    i<k;   i++){
+                    
+                    while( !min.isEmpty()   &&   arr[min.peekLast()] >= arr[i] ){
+                            min.pollLast();
+                    }
+                    while( !max.isEmpty()   &&   arr[max.peekLast()] <= arr[i] ){
+                            max.pollLast();
+                    }
+                    
+                    min.add(i);
+                    max.add(i);
+            }
+            
+            
+            int sum = 0;
+            
+            for(int i=k;   i<arr.length;   i++){
+                sum = sum + arr[min.peekFirst()] + arr[max.peekFirst()];
+             //       System.out.println(sum);
+                    while ( !min.isEmpty()  &&   min.peekFirst()<=i-k  ){
+                            min.pollFirst();
+                    }
+                    while( !max.isEmpty()   &&   max.peekFirst()<=i-k  ){
+                            max.pollFirst();
+                    }
+                    
+                    
+                    
+                    while( !min.isEmpty()   &&   arr[min.peekLast()] >= arr[i] ){
+                            min.pollLast();
+                    }
+                    while( !max.isEmpty()   &&   arr[max.peekLast()] <= arr[i] ){
+                            max.pollLast();
+                    }
+                    
+                    min.add(i);
+                    max.add(i);
+                    
+            }
+            
+            sum = sum +  arr[min.peekFirst()] + arr[max.peekFirst()];
+            
+            System.out.println(sum); 
+            
+    }
+}
+
+SUM OF MAXIMUM AND MINIMUM ELEMENTS is:  18
+  time complexity :=  O(N)
+  space complexity:=  O(K)        
