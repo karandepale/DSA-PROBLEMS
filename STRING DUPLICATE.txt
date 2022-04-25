@@ -1,0 +1,36 @@
+public class Main {
+    public static void main(String[] args) {
+        
+            Scanner sc = new Scanner(System.in); 
+            String str = sc.nextLine();
+            System.out.println("given string is:" +str);
+            
+            int[] arr = new int [26];
+            
+            for(int i=0;   i<str.length();   i++){
+                    char ch = str.charAt(i);
+                    
+                    int index = ch-'a';
+                    arr[index]++;
+            }
+            
+            for(int i=0;   i<arr.length;   i++){
+                    System.out.print( "frequency is:" +arr[i] +" ");
+                    System.out.println();
+                    
+                    if(arr[i] >1){
+                            System.out.println("contains duplicate");
+                            return;
+                    }
+                    else {
+                            System.out.println("not duplicacy");
+                    }
+                    
+            }
+    }
+}
+
+
+given string is:karan
+frequency of duplicate character  is:  2 
+contains duplicate.
