@@ -1,3 +1,6 @@
+INSERT DATA ELEMENT AT CERTAIN POSITION.
+
+
 class Node{
         int x ;
         Node next;
@@ -46,3 +49,12 @@ class Main {
         }
         
 }
+
+
+
+output = 
+linked list is :
+10 20 30 40 
+
+after inserting at 2nd position:
+10 20 200 30 40 
