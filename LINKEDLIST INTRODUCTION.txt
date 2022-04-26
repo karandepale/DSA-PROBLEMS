@@ -1,0 +1,15 @@
+INTRODUCTION OF THE LINKED LIST :>
+
+Linked List is a linear data structure,linked list elements are not stored at a contiguous location, the elements are linked using pointers.
+a linked list consists of nodes where each node contains a value and a address part to the next node in the list.
+
+Why Linked List? 
+arrays have the following limitations:>
+
+(1).    The size of the arrays is fixed.
+(2).   insertion and deletion the new element in the array is expensive because the shifted operation we need          to do that.
+(3).   Linked list allows for a dynamic size that can change at runtime.
+(4).   Memory allocation: For arrays at compile time , and for linked lists at runtime.
+(5).   Execution time:
+                                 (i)some operations (such as modifying a certain element) are faster in arrays.
+                                 (ii)such as inserting/deleting an element in the data are faster in linked lists.
