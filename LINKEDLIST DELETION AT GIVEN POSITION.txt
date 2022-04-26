@@ -1,0 +1,71 @@
+class Node{
+        int x ;
+        Node next;
+        
+        Node(int x){
+                this.x = x;
+        }
+}
+
+
+class Main {
+        public static void main (String[] args){
+ 
+        
+                Node head = new Node(10);
+                head.next = new Node(20);
+                head.next.next = new Node(30);
+                head.next.next.next = new Node(40);
+                
+                System.out.println("linked list is :");
+                printList(head);
+                System.out.println();
+                System.out.println();
+                
+                System.out.println("after inserting at 2nd position:");
+                insert(head , 200 , 2);
+                 printList(head);
+                 System.out.println();
+                System.out.println();
+                
+                System.out.println("after detetion at 4 the position");
+                deleteposition (head , 4);
+                 printList(head);
+                
+        }
+        
+        public static void printList ( Node head){
+                if(head == null){
+                        return;
+                }
+                while(head != null){
+                        System.out.print(head.x +" ");
+                        head = head . next;
+                }
+        }
+        
+        public static void insert ( Node head , int k , int pos){
+                Node newNode = new Node(k);
+                Node prev = head;
+                
+                for(int i=0;   i<pos-1;    i++){
+                        prev  = prev.next;
+                }
+                newNode.next = prev.next;
+                prev.next = newNode;
+        }
+        
+        
+        
+        public static void deleteposition ( Node head , int pos){
+                
+                Node prev = head;
+                for(int i=0;   i<pos-1;  i++){
+                        prev = prev.next;
+                }
+                
+                prev.next = prev.next.next;
+                
+        }
+        
+}
