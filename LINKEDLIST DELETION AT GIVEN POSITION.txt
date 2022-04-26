@@ -69,3 +69,14 @@ class Main {
         }
         
 }
+
+
+OUTPUT = 
+linked list is :
+10 20 30 40 
+
+after inserting at 2nd position:
+10 20 200 30 40 
+
+after detetion at 4 the position
+10 20 200 30 
