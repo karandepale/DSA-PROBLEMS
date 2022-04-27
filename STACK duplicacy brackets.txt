@@ -1,0 +1,39 @@
+public class Main {
+    public static void main(String[] args) {
+       
+            Scanner sc = new Scanner (System.in);
+            String str = sc.nextLine();
+            
+            Stack < Character > st = new Stack <>();
+            for(int i=0;   i<str.length();   i++){
+                    char ch = str.charAt(i);
+                    
+                    
+                    if(ch == ')'){
+                            if(  st.peek() == '('  ){
+                                    System.out.println("duplicacy present present here.");
+                                    return ;
+                            }
+                            else {
+                                    while(st.peek() != '('  ){
+                                            st.pop();
+                                    }
+                                    st.pop();
+                            }
+                            
+                    }
+                    else {
+                            st.push (ch);
+                    }
+                    
+                    
+            }
+            System.out.println("duplicacy NOT presents here.");
+    }
+}
+
+INPUT   = (a+b) + (c+d)
+OUTPUT  = not duplicacy.
+
+INPUT   = (a+b) + ((c+d))
+OUTPUT  = duplicacy present.
