@@ -1,0 +1,18 @@
+INTRODUCTION OF THE STACK  :-
+
+Stack is a linear data structure , It maintains LIFO (last in first out) order . 
+
+there are some operations like :
+                       (1).   search
+                       (2).  create
+                       (3).  update
+                      (4).   delete
+                                           they all are happens in the constant time : O(1) time complexity.
+
+stack methods :-
+  
+(i)      push ()        -      insertion .
+(ii)     pop()           -      deletion .
+(iii)    peek()          -      check the topmost element.
+(iv)    isEmpty()    -      check the size of stack is empty or not.
+(v)     size()           -      calculate the sie of size.
