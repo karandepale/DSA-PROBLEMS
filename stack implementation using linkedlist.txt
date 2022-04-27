@@ -1,0 +1,133 @@
+ linkedList-implementation-using-stack
+
+
+class stack {
+             class Node {
+                     int data;
+                     Node next;
+                     
+                     Node(int data){
+                             this.data = data;
+                     }
+             }
+        
+       int size;
+        Node top;
+        stack(){
+                this.size = 0;
+                this.top  = null;
+        }
+        
+        
+//PUSH ELEMENTS IN THE STACK:>
+        public void push(int x){
+                Node newNode = new Node(x);
+                newNode.next = top;
+                top = newNode;
+                size++;
+        }
+        
+        
+ //POP ELEMENT IN THE STACK:>
+        public void pop(){
+               if(top != null){
+                       top = top.next;
+                       size--;
+               } 
+        }
+        
+       
+   //PEEK ELEMENT AT THE TOP OF STACK:>
+        public void peek () {
+                if(top != null){
+                        System.out.println(top.data);
+                }
+                else {
+                        System.out.println("stack empty in the peek function:");
+                }
+        }
+        
+        
+        
+        
+        
+     //SIZE CALCULATING FUNCTION:>
+        public int size(){
+                return size;
+        }
+        
+        
+//EMPTY OR NOT FUNCTION:>
+        public boolean isEmpty(){
+                return top == null;
+        }
+        
+        
+        
+     //PRINTING FUNCTION:>
+        public void print(){
+                Node temp = top;
+                while(temp != null){
+                        System.out.println(temp.data +" ");
+                        temp = temp.next;
+                }
+                System.out.println();
+        }
+}  //stack classs ended here.
+
+
+
+class Main {
+        public static void main (String[] args){
+                
+                 stack s = new stack();
+                s.push(100);
+                s.push(200);
+                s.push(300);
+                s.push(400);
+                s.push(500);
+                s.push(600);
+                
+                
+                System.out.println(" stack elements are:>"  );
+                 s.print();
+                
+                System.out.println(" top element in the stack :>" );
+                s.peek();
+                
+                System.out.println(" deleting elemnt in the stack :>");
+                s.pop();
+                
+                System.out.println(" after deleting top element the stack remains :>");
+                 s.print();
+                
+               System.out.println("size of the stack is:>"  +   s.size());
+               System.out.println("stack is empty ?" + s.isEmpty());
+                
+        }
+}
+
+
+
+
+output = 
+stack elements are:>
+600 
+500 
+400 
+300 
+200 
+100 
+
+ top element in the stack :>
+600
+ deleting elemnt in the stack :>
+ after deleting top element the stack remains :>
+500 
+400 
+300 
+200 
+100 
+
+size of the stack is:>5
+stack is empty ?false
