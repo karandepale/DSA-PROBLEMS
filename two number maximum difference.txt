@@ -1,0 +1,26 @@
+//MAXIMUM DIFFERENCE BW TWO ELEMENTS IN THE ARRAY.
+
+
+public class Main {
+    public static void main(String[] args) {
+       
+            int[] arr = { 2,5,15,6,4 };
+            int minDiff = Integer.MAX_VALUE;
+            int maxDiff = Integer.MIN_VALUE;
+            
+            for(int i=0;   i<arr.length;   i++){
+                    
+                    if(arr[i] < minDiff){
+                            minDiff = arr[i];
+                    }
+                    
+                    if(arr[i]-minDiff > maxDiff){
+                            maxDiff = arr[i]-minDiff;
+                    }
+            }
+            System.out.println(  "maximum difference between two wlwmwnts is:" +  maxDiff);
+            
+    }
+}
+
+output = maximum difference between two wlwmwnts is: 13
