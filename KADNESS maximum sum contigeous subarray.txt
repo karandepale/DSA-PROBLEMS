@@ -1,0 +1,27 @@
+// MAXIMUM SUM IN THE CONTIGEOUS SUBARRAY:>
+
+
+public class Main {
+    public static void main(String[] args) {
+       
+            int[] arr = { 1,2,-3,4,3,8,5 };
+            int sum = 0;
+            int maxSum = 0;
+            
+            for(int i=0;   i<arr.length;  i++){
+                    
+                    if(sum >0){
+                            sum = sum  + arr[i];
+                    }
+                    else{
+                            sum = arr[i];
+                    }
+                    
+                    maxSum = Math.max(maxSum , sum);
+            }
+            System.out.println(  "maximum sum of contigeous subarray is:>" +  maxSum);
+            
+    }
+}
+
+output = maximum sum of contigeous subarray is :>  20
