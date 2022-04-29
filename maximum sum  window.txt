@@ -1,0 +1,29 @@
+//MAXIMUM SUM IN THE FIXED SIZE WINDOW.
+
+
+public class Main {
+    public static void main(String[] args) {
+        
+            int[] arr = { 2,1,5,1,3,2 };
+            for(int i=0;   i<arr.length;   i++){
+                    System.out.print(arr[i] + " ");
+            }
+            System.out.println();
+            
+            int start = 0;
+            int sum = 0;
+            int maxSum = 0;
+            int k=3;
+            
+            for(int end=0;   end<arr.length;    end++){
+                    sum = sum + arr[end];
+                    
+                    if(end >= k-1 ){
+                            maxSum = Math.max(sum , maxSum);
+                            sum = sum - arr[start];
+                            start++;
+                    }
+            }
+            System.out.println( "maximum sum in fixed window is:" + maxSum );
+    }
+}
