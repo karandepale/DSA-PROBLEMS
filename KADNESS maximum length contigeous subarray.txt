@@ -1,0 +1,25 @@
+// MAXIMUM LENGTH OF CONTIGEOUS SUBARRAY:>
+
+
+public class Main {
+    public static void main(String[] args) {
+       
+            int[] arr = { 1,2,3,4,0,2,1,6};
+            int len = 1;
+            int maxLen = 1;
+            
+            for(int i=1;   i<arr.length;   i++){
+                    if(arr[i] > arr[i-1]){
+                            len++;
+                    }
+                    else{
+                            len = 1;
+                    }
+                    maxLen = Math.max(len , maxLen);
+            }
+            
+            System.out.println( "maximum length of contigeous subarray is:>" +  maxLen);
+    }
+}
+
+output = maximum length of contigeous subarray is:> 4
