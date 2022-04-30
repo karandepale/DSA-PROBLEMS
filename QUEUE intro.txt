@@ -1,0 +1,16 @@
+INTRODUCTION OF QUEUE :-
+
+A Queue is a linear structure which follows a particular order in which the operations are performed. The order is First In First Out (FIFO).
+The difference between stacks and queues is in removing. In a stack we remove the item the most recently added; in a queue, we remove the item the least recently added.
+
+> in queue random access is not alllowed.
+> insertion in the queue is happened in rear .
+> deletion in the queue is happened in front.
+
+THERE ARE SOME METHODS OF QUEUE:>
+
+(1)     add()           :-  used to add element in the queue. 
+(2)    size()           :-  calulate the size of the queue.
+(3)    poll()           :-  if queue is empty than poll() does not throw null pointer exception.
+(4)    remove()    :-  used to remove element in the rear end in the queue. (throw null pointer                                   exception,when queue is empty).
+(5)    isEmpty()   :-  return boolean value .
