@@ -1,0 +1,25 @@
+public class Main {
+    public static void main(String[] args) {
+       
+            String str = "abca";
+            
+            int i = 0;
+            int j   = 0;
+            int maxLen = 1;
+            
+            HashSet < Character > st = new HashSet <>();
+            while( j<str.length() ){
+                    if(   !st.contains(str.charAt(j))  ){
+                    st.add(str.charAt(j));
+                    j++;
+                    
+                    maxLen = Math.max(maxLen , st.size());
+            }
+                    else{
+                            st.remove (str.charAt(i));
+                            i++;
+                    }
+            }
+            System.out.println(maxLen);
+    }
+}
