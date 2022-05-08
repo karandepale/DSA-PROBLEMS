@@ -1,0 +1,20 @@
+public class Main {
+    public static void main(String[] args) {
+        
+            Scanner sc = new Scanner (System.in);
+            String str = sc.nextLine();
+            System.out.println( "given string :"+  str);
+           
+     LinkedHashSet < Character > set = new LinkedHashSet <>();
+            for(int i=0;   i<str.length();   i++){
+                    set.add(str.charAt(i));
+                     
+                   
+            }
+      
+             System.out.println("aftre removing duplicate character from string: ");
+                     for(Character ch : set)   
+            System.out.print(  ch);        
+            
+    }
+}
