@@ -1,0 +1,30 @@
+public class Main {
+    public static void main(String[] args) {
+        
+            Scanner sc = new Scanner (System.in);
+            String str = sc.nextLine();
+            System.out.println( "given string :"+  str);
+           
+            int start = 0;
+            int end = str.length()-1;
+            
+            while(start < end){
+                   if(str.charAt(start) == str.charAt(end)){
+                           System.out.println("string is pelindrom.");
+                           
+                           start ++;
+                           end -- ;
+                           return;
+                   }
+                    else{
+                            System.out.println("not a pelindrom string.");
+                            return;
+                    }
+            }
+            
+    }
+}
+
+output = 
+given string :mem
+string is pelindrom.        
