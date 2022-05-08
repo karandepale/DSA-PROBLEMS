@@ -1,0 +1,48 @@
+public class Main {
+    public static void main(String[] args) {
+       
+            int[] arr = { 5,2,4,1,3};
+            System.out.println("input array : ");
+            for(int i=0;   i<arr.length;   i++){
+                    System.out.print(arr[i] +"  ");
+            }
+            System.out.println();
+            System.out.println("sorted array : ");
+            Arrays.sort(arr);
+            for(int i=0;   i<arr.length;   i++){
+                    System.out.print(arr[i] +"  ");
+            }
+            System.out.println();
+           int n = 5;
+            int  k =  9;
+            binarySearch (arr , n , k);
+            
+    }
+        public static void binarySearch ( int[] arr , int n,  int k){
+                int start = 0;
+                int end   = n-1;
+                int mid   = start + (end - start)/2;
+                
+                
+                if(arr[mid] == k){
+                        System.out.println("present");
+                        return;
+                }
+                else if(arr[mid] > k){
+                        end = mid-1;
+                }
+                else{
+                        start = mid + 1;
+                }
+                
+                System.out.println(" target value not present");
+        }
+        
+}
+
+output = 
+input array : 
+5  2  4  1  3  
+sorted array : 
+1  2  3  4  5  
+target value not present  .      
