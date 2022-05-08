@@ -18,3 +18,9 @@ public class Main {
             
     }
 }
+
+output  =
+given string :karan
+
+aftre removing duplicate character from string: 
+karn
