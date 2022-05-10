@@ -1,0 +1,54 @@
+// problem :> find minimum number of swapping to bring all the elements which are smaller than  k together.  
+
+
+public class Main {
+    public static void main(String[] args) {
+
+            int[] arr = { 1,2,5,3,7 };
+            int k = 3;
+            int gv = 0;
+            int bv = 0;
+            
+            for(int i=0;   i<arr.length;   i++){
+                    if(arr[i] <= k){
+                            gv ++;
+                    }
+            }
+            
+            for(int i=0;   i<gv;   i++){
+                    if(arr[i] > k){
+                            bv ++;
+                    }
+            }
+            
+            
+            int i=0;
+            int j=gv;
+            int ans=bv;
+                    
+            
+            while( j<arr.length ){
+                    
+                    if(arr[i] > k){
+                            bv --;
+                    }
+                    if(arr[j] > k){
+                            bv ++;
+                    }
+                    
+                    ans = Math.min (ans , bv);
+                    i++;
+                    j++;
+                    
+            }
+            System.out.println("minimum no of swapping :");
+            
+            System.out.println(ans);
+            
+    }
+}
+
+output = 
+minimum no of swapping :1
+time complexity = O(N)
+space complexity = O(1).        
