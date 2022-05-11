@@ -1,0 +1,152 @@
+class Node {
+        int x;
+        Node next;
+        
+        Node(int x){
+                this.x = x;
+        }
+}
+
+class Main {
+        public static void main (String[] args){
+                Scanner sc = new Scanner (System.in);
+                int n1 = sc.nextInt();
+                int n2 = sc.nextInt();
+                
+                Node head1 = null;
+                Node temp1 = null;
+                
+                Node head2 = null;
+                Node temp2 = null;
+                
+                for(int i=0;   i<n1;   i++){
+                        int x = sc.nextInt();
+                        if(head1 == null){
+                                head1 = new Node(x);
+                                temp1 = head1;
+                        }
+                        else{
+                                temp1.next = new Node(x);
+                                temp1 = temp1.next;
+                        }
+                }
+                
+                
+                
+                for(int i=0;   i<n2;   i++){
+                        int x = sc.nextInt();
+                        if(head2 == null){
+                                head2 = new Node(x);
+                                temp2 = head2;
+                        }
+                        else{
+                                temp2.next = new Node(x);
+                                temp2 = temp2.next;
+                        }
+                }
+                 
+               
+                
+                System.out.println(" 1st list elements are: ");
+                printList1 (head1);
+                System.out.println();
+                System.out.println();
+                
+                System.out.println(" 2nd list elements are: ");
+                printList2 (head2);
+                System.out.println();
+                System.out.println();
+                
+         Node head = merge (head1 , head2); 
+                printList (head);
+                System.out.println();
+                
+        }
+        
+        public static void printList1 (Node head1){
+                if(head1 == null){
+                        return;
+                }
+                while(head1 != null){
+                        System.out.print(head1.x + " ");
+                        head1 = head1.next;
+                }
+        }
+        
+        
+        
+         public static void printList2 (Node head2){
+                if(head2 == null){
+                        return;
+                }
+                while(head2 != null){
+                        System.out.print(head2.x + " ");
+                        head2 = head2.next;
+                }
+        }
+       
+        
+        
+        
+        
+        public static Node merge (Node head1 , Node head2){
+                Node l1 = head1;
+                Node l2 = head2;
+                
+                if(l1.x  >  l2.x){
+                        Node temp = l1;
+                        l1 =l2;
+                        l2 = temp;
+                }
+                
+                
+                Node res  = l1;
+                while(l1 != null   &&   l2 != null){
+                        Node temp = null;
+                        
+                        while(l1 != null   &&   l1.x  <=  l2.x){
+                                temp = l1;
+                                l1 = l1.next;
+                        }
+                        temp.next = l2;
+                        
+                         temp = l1;
+                        l1  = l2;
+                        l2  = temp;
+                }
+               // System.out.println(res.x);
+                return res;
+                
+                
+        }
+        
+        
+        
+        public static void printList (Node head){
+                if(head == null){
+                        return;
+                }
+                while(head != null){
+                        System.out.print(head.x + " ");
+                        head = head.next;
+                }
+        } 
+       
+}
+
+time complexity = O(N)
+space complexity = O(1)        
+
+input = 6 6
+1 2 4 8 9 15
+3 7 14 45 50 60
+output = 
+1st list elements are: 
+1 2 4 8 9 15 
+
+ 2nd list elements are: 
+3 7 14 45 50 60 
+
+ sorted list :       
+1 2 3 4 7 8 9 14 15 45 50 60         
+  
