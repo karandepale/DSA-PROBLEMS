@@ -1,0 +1,44 @@
+// BALANCED PARANTHESES PROBLEM STACK:>
+
+public class Main {
+    public static void main(String[] args) {
+       
+            Scanner sc = new Scanner(System.in);
+            String str = sc.nextLine();
+            System.out.println("input string  : " + str);
+            
+            Stack < Character > st = new Stack <>();
+            for(int i=0;   i<str.length();    i++){
+                    char ch = str.charAt(i);
+                    
+                    if(  !st.isEmpty()  &&  ch=='}'  && st.peek()=='{'  ){
+                            st.pop();
+                    }
+                    else if( !st.isEmpty()  && ch==')' &&  st.peek()=='('  ){
+                            st.pop();
+                    }
+                    else if( !st.isEmpty()  &&  ch==']'  &&  st.peek()=='['  ){
+                            st.pop();
+                    }
+                    else{
+                            st.push(ch);
+                    }
+            }
+            
+            if(st.isEmpty() ){
+                    System.out.println(" PARANTHESES BALANCED ");
+            }
+            else{
+                    System.out.println(" PARANTHESES NOT BALANCED ");
+            }
+    }
+}
+
+output = 
+input string  : {()}[]
+PARANTHESES BALANCED. 
+        
+        
+input string  : {[]}) 
+PARANTHESES NOT BALANCED         
+
