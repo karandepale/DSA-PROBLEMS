@@ -1,0 +1,25 @@
+public class Main {
+    public static void main(String[] args) {
+       
+            String s1 = "abc";
+            String s2 = "bad";
+            
+            char[] arr = s1.toCharArray();
+            char[] brr = s2.toCharArray();
+            
+            Arrays.sort(arr);
+            Arrays.sort(brr);
+            
+            if(s1.length() !=  s2.length()){
+                    System.out.println("NO");
+                    return;
+            }
+            if(Arrays.toString(arr) .equals (Arrays.toString(brr))){
+                    System.out.println("YES");
+            }
+            else{
+                    System.out.println("NOT");
+            }
+            
+    }
+}
