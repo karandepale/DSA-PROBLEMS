@@ -1,0 +1,47 @@
+//LONGEST CONSICUTIVE SUBSEQUENCE :> 
+public class Main {
+    public static void main(String[] args) {
+       Scanner sc =  new Scanner(System.in);
+            int n = sc.nextInt();
+            
+            int[] arr = new int[n];
+            for(int i=0;    i<arr.length;   i++){
+                    arr[i] = sc.nextInt();
+                    System.out.print(arr[i] + " ");
+            }
+            System.out.println();
+           
+            
+       longestConsLength(arr);
+            
+    }
+  public static void longestConsLength(int[]arr){
+          HashSet < Integer > set = new HashSet < Integer > ();
+          for(int i=0;   i<arr.length;   i++){
+                  set.add(arr[i]);
+          }
+          int count = 0;
+          int ans = 0;
+          
+          for(int i=0;    i<arr.length;   i++){
+                  if(!set.contains(arr[i]-1)){
+                          int temp = arr[i] + 1;
+                          count = 1;
+                          
+                          while(set.contains (temp)){
+                                  count++;
+                                  temp ++;
+                          }
+                          if(count > ans)
+                                  ans = count;
+                          
+                  }
+          }
+          System.out.println(ans);
+  }
+     
+}
+
+input  = 20 14 19 9 11 
+output = 2
+explanation  = 19 and 20 are longest consicutive elements .        
