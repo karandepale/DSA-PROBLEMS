@@ -1,0 +1,25 @@
+// number of vowel and consonents in the given string :>
+
+public class Main {
+    public static void main(String[] args) {
+      String str = "aeioujkl";
+            int vowel = 0;
+            int cons = 0;
+            
+            for(int i=0;   i<str.length();   i++){
+                    char ch = str.charAt(i);
+                    
+                    if(ch == 'a' ||  ch=='e' || ch=='i' ||  ch=='o' || ch=='u'){
+                            vowel++;
+                    }
+                    else if(ch>'a'  &&  ch<='z'){
+                            cons++;
+                    }
+            }
+            System.out.println(" number of vowels are :> " + vowel);
+            System.out.println("number of consonents are :> " + cons);
+    }
+}
+output = 
+number of vowels are :> 5
+number of consonents are :> 3        
