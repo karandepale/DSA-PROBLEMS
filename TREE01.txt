@@ -1,0 +1,31 @@
+class Node{
+        int data;
+        Node left;
+        Node right;
+        
+        Node(int data){
+                this.data = data;
+                left  = null;
+                right = null;
+        }
+}
+
+class Main {
+        public static void main (String[] args){
+                Node root = new Node(10);
+                root.left = new Node(15);
+                root.right = new Node(11);
+                
+                root.left.left = new Node(102);
+                
+                System.out.println("root data :>  " + root.data);
+                System.out.println("left data :>  " + root.left.data);
+                System.out.println("right data:>  " + root.right.data);
+                System.out.println("left of left of root data: > " + root.left.left.data);
+        }
+}
+output = >
+root data :>  10
+left data :>  15
+right data:>  11
+left of left of root data: > 102
