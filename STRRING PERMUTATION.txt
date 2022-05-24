@@ -1,0 +1,46 @@
+/all the permutation of a given string :>
+
+public class Main {
+    public static void main(String[] args) {
+       String str = "abc";
+            permute(0 , str);
+            
+            
+    }
+        
+        
+        public static String swap ( String str , int a , int b){
+                char[] arr = str.toCharArray();
+                char temp = arr[a];
+                arr[a] = arr[b];
+                arr[b] = temp;
+                
+                return str.valueOf(arr);
+               
+        }
+        
+        public static void permute (int index , String str){
+                
+                if(index == str.length()-1){
+                        System.out.println(str);
+                        return;
+                }
+                
+                for(int i=index;    i<str.length();   i++){
+                        str = swap (str , i , index);
+                        permute (index+1 , str);
+                        str = swap (str , i , index);
+                }
+                
+                
+                
+        }
+}
+
+output = 
+abc
+acb
+bac
+bca
+cba
+cab
