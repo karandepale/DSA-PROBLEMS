@@ -1,0 +1,42 @@
+// FIND THE MINIMUM AND MAXIMUM VALUE IN THE ARRAY .
+public class Main {
+    public static void main(String[] args) {
+       
+            int[] arr = {10 ,70,50,1,100};
+           int minvalue =  getMin(arr);
+            System.out.println( "minimum value in the array is: " +  minvalue);
+            System.out.println();
+            
+            int maxvalue = getMax(arr);
+            System.out.println("maximum value in the array is: >" + maxvalue);
+            
+    }
+        
+        
+        
+         
+        public static int getMin (int[] arr){
+                int min = Integer. MAX_VALUE;
+                for(int i=0;   i<arr.length;   i++){
+                        if(min > arr[i]){
+                                min = arr[i];
+                        }
+                }
+                return min;
+        }
+        
+        public static int getMax ( int[] arr){
+                int max = Integer. MIN_VALUE;
+                for(int i=0;   i<arr.length;   i++){
+                        if(max < arr[i]){
+                                max = arr[i];
+                        }
+                }
+                return max;
+        }
+        
+}
+output = 
+minimum value in the array is: 1
+
+maximum value in the array is: >100
