@@ -1,0 +1,32 @@
+// find the subarray with given value.
+public class Main {
+    public static void main(String[] args) {
+      int [] arr = { 10 , 12 , 2 , 4 , 13 , 19 , 5 };
+            int target = 18;
+            int sum = 0;
+            int start = 0;
+            int end  = -1;
+           //output = index from 1 to 3 and vlues are 12,2,4
+            
+            HashMap < Integer , Integer > map = new HashMap<>();
+            for(int i=0;   i<arr.length;  i++){
+                    sum = sum + arr[i];
+                    
+                    if(map.containsKey(sum-target)){
+                            start = map.get(sum - target) + 1;
+                            end = i;
+                    }
+                    else{
+                    map.put(sum , i);
+                    }
+                    
+            }
+            System.out.println(start + "to" + end);
+            System.out.println(arr[start] +","+ arr[start+1]+ "," + arr[end]);
+           
+    }
+}
+
+output =
+indexes  :-     1 to 3
+values are :-   12,2,4
