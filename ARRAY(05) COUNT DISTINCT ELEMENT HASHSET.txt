@@ -1,0 +1,14 @@
+// "COUNT THE DISTINCT ELEMENTS IN THE ARRAY :>
+public class Main {
+    public static void main(String[] args) {
+int[] arr = {10,5,10,5,20};
+            
+            HashSet < Integer > set = new HashSet <>();
+            for(int i=0;   i<arr.length;   i++){
+                    set.add(arr[i]);
+            }
+            System.out.println("distinct elements in the array is :- " + set.size() );
+    
+    }
+}
+output = distinct elements in the array is :- 3
