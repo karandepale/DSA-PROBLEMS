@@ -1,0 +1,24 @@
+ public static void levelOrderTraversal ( Node root ){
+               if(root == null){
+                       return;
+               }
+               
+               Queue < Node > qu = new LinkedList <Node> ();
+               qu . add (root);
+               
+               
+               while (! qu . isEmpty() ){
+                       Node temp = qu.poll();
+                       System.out.print(temp.data + " ");
+                       
+                       
+                       if(temp.left != null){
+                               qu.add(temp.left);
+                       }
+                       
+                       if(temp.right != null){
+                               qu.add(temp.right);
+                       }
+                       
+                       
+               }
