@@ -1,0 +1,105 @@
+class Node{
+        int data;
+        Node left;
+        Node right;
+        
+        Node (int data){
+                this.data = data;
+                left = null;
+                right = null;
+        }
+}
+
+class Main {
+        public static void main (String[] args){
+                Node root = new Node (25);
+                root. left = new Node (15);
+                root.right = new Node (50);
+                root.left.left = new Node(10);
+                root.left.right = new Node(22);
+                root.right.left = new Node(35);
+                root.right.right = new Node(70);
+                root.left.left.left = new Node (4);
+                root.left.left.right = new Node(12);
+                root.left.right.left = new Node(18);
+                root.left.right.right = new Node(24);
+                root.right.left.left = new Node (31);
+                root.right.left.right = new Node(44);
+                root.right.right.left = new Node(66);
+                root.right.right.right = new Node(90);
+                
+                System.out.println("pre Order traversal :");
+                System.out.println("  ( ROOT , LEFT , RIGHT )  ");
+                preOrder (root);
+                
+                System.out.println();
+                System.out.println();
+                
+                System.out.println("inorder traversal : ");
+                System.out.println( "   (LEFT , ROOT , RIGHT)  ");
+                inOrder (root);
+                
+                System.out.println();
+                System.out.println();
+                
+                System.out.println("post Order traversal: ");
+                System.out.println(" (LEFT , RIGHT , ROOT) ");
+                postOrder ( root );
+                
+        }
+        
+        
+        
+        
+        public static void preOrder ( Node root ){
+                if(root == null){
+                        return ;
+                }
+                
+                System.out.print(root.data + " ");
+                preOrder ( root . left );
+                preOrder ( root . right );   
+        }
+        
+        
+        
+        
+        public static void inOrder ( Node root ){
+                if(root == null){
+                        return;
+                }
+                
+                
+                inOrder ( root . left );
+                System.out.print(root.data + " ");
+                inOrder (root . right);
+        }
+        
+        
+        
+        
+        public static void postOrder ( Node root ){
+                if(root == null){
+                        return;
+                }
+                
+                postOrder ( root . left );
+                postOrder ( root . right  );
+                System.out.print(root.data + " ");
+                 
+        }
+       
+}
+
+output = 
+pre Order traversal :
+  ( ROOT , LEFT , RIGHT )  
+25 15 10 4 12 22 18 24 50 35 31 44 70 66 90 
+
+inorder traversal : 
+   (LEFT , ROOT , RIGHT)  
+4 10 12 15 18 22 24 25 31 35 44 50 66 70 90 
+
+post Order traversal: 
+ (LEFT , RIGHT , ROOT) 
+4 12 10 18 24 22 15 31 44 35 66 90 70 50 25         
