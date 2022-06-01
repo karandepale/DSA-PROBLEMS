@@ -1,0 +1,27 @@
+// REARRANGE IN ALTERNAVIVE MANNER POSITIVE AND NEGETIVE INTEGERS .
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {3,1,-2,-5,2,-4};
+            
+            int i=0;
+            int j=1;
+            int[] ans = new int[arr.length];
+            
+            for(int k=0;   k<arr.length;    k++){
+                    if( arr[k] >=0 ){
+                            ans[i] = arr[k];
+                            i = i + 2;
+                    }
+                    else{
+                            ans[j] = arr[k];
+                            j = j + 2;
+                    }
+            }
+            
+            for(int m=0;   m<ans.length;    m++){
+                    System.out.print(ans[m] + " ");
+            }
+    }
+}
+outut = 
+3 -2 1 -5 2 -4 
