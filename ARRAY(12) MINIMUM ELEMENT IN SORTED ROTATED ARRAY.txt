@@ -1,0 +1,40 @@
+public class Main {
+    public static void main(String[] args) {
+
+    int[] arr = {3,4,5,1,2};
+            getMin ( arr );
+    }
+        
+        public static void getMin ( int[] arr){
+                int start = 0;
+                int end = arr.length-1;
+                
+                while(start < end){
+                        
+                        int mid = start + (end - start) / 2;
+                        
+                        if(arr[mid] > arr[mid+1]){
+                                System.out.println(arr[mid + 1]);
+                                return;
+                        }
+                        if(arr[mid] < arr[mid-1]){
+                               System.out.println(arr[mid]);
+                                return;
+                        }
+                        
+                        if(arr[0] < arr[mid]){
+                                start = mid+1;
+                        }
+                        else{
+                                end = mid - 1;
+                        }
+                       
+                }
+                        
+                        
+                         
+                        
+                        
+        }
+        
+}
