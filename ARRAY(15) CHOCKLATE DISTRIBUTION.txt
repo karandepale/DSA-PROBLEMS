@@ -1,0 +1,54 @@
+// Chocolate Distribution Problem
+//approach :-   SORT THE ARRAY
+ //             FIND THE MINIMUM DIFFERENCE IN FIXED SIZE WINDOW.
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        
+            int[] arr = {7, 3, 2, 4, 9, 12, 56};
+            System.out.println("input array :>");
+            for(int i=0;   i<arr.length;   i++){
+                    System.out.print(arr[i] +  "  ");
+            }
+            System.out.println();
+            
+            Arrays.sort(arr);
+            System.out.println("sorted array :> ");
+            for(int i=0;   i<arr.length;   i++){
+                    System.out.print(arr[i] + "  ");
+            }
+            System.out.println();
+            
+            
+            
+            
+            int start = 0;
+            int end = arr.length-1;
+            int diff = 0;
+            int minDiff = 999999;
+            int k=3;
+            
+            for(end=0;   end<arr.length;   end++){
+                    diff = arr[end] - diff;
+                    
+                    if(diff >= k-1){
+                            minDiff = Math.min ( diff , minDiff );
+                            diff = diff - arr[start];
+                            start ++;
+                    }
+                    
+            }
+            
+            System.out.println( "minimum difference " +  minDiff);
+           
+    }
+}
+
+output = 
+input array :>
+7  3  2  4  9  12  56  
+sorted array :> 
+2  3  4  7  9  12  56  
+minimum difference 2        
