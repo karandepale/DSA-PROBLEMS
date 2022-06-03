@@ -1,0 +1,99 @@
+//IMPLEMENTATION OF TWO STACK IN ONE ARRAY.
+
+class TwoStack {
+        int[] arr;
+        int size ;
+        int top1;
+        int top2;
+        
+        TwoStack(int n){
+                arr = new int[n];
+                size = n;
+                top1 = -1;
+                top2 = size;
+        }
+
+
+
+//class Main{
+  public void push1 (int x){
+        if(top1 < top2-1){
+                    top1++;
+                arr[top1] = x;
+            
+        }
+        else{
+                System.out.println("stack overflow");
+                return;
+        }
+}
+
+
+
+  public void push2(int x){
+        if(top1 < top2-1){
+                 top2--;
+                arr[top2] = x;
+               
+        }
+        else{
+                System.out.println("stack overflow");
+                return;
+        }
+}
+
+
+
+ public int pop1(){
+        if(top1 > 0){
+                int popOne = arr[top1];
+                top1 --;
+                //System.out.println(popOne);
+                return popOne;
+        }
+        else{
+                System.out.println("stack underflow");
+        }
+         return 0;
+}
+
+
+
+ public int pop2(){
+        if(top2 < size){
+                int popTwo = arr[top2];
+                top2 --;
+                //System.out.println(popTwo);
+                return popTwo;
+        }
+          else{
+                  System.out.println("stack underflow");
+          }
+         return 0;
+}
+
+
+
+public static void main (String[] args){
+        TwoStack obj = new TwoStack (5);
+        
+        obj.push1(5);
+        obj.push2(10);
+        obj.push2(15);
+        obj.push1(11);
+        obj.push2(7);
+        
+        System.out.println("poped element in stack one : " + obj.pop1() );
+        
+        obj.push2(40);
+        
+        System.out.println("poped elements in stack two : " + obj.pop2() );
+}
+
+}
+
+output = 
+poped element in stack one : 11
+poped elements in stack two : 40        
+
+
