@@ -1,0 +1,92 @@
+class Node{
+        Node left;
+        int data;
+        Node right;
+
+        
+        Node(int data){
+                this.data = data;
+        }
+}
+
+class Main{
+        public static void main (String[] args){
+                
+                Node root = new Node(100);
+                root.left = new Node(200);
+                root.right = new Node(300);
+
+                levelOrderInsertion(root , 1038);
+                
+                System.out.println("new Node is" + root.left.left.data);
+                
+                levelOrderTraversal(root);
+        }
+        
+        public static void levelOrderInsertion ( Node root , int k){
+                Node newNode = new Node(k);
+                Node temp = root;
+                
+                if(temp == null){
+                        temp = new Node(k);
+                }
+                
+                
+                else{
+                        Queue < Node > queue = new LinkedList <>();
+                        queue.add(temp);
+                        
+                        while( !queue.isEmpty() ){
+                               Node top = queue.poll();
+                                
+                                if(top.left != null){
+                                        queue.add(top.left);
+                                }
+                                else{
+                                        top.left = newNode;
+                                        break;
+                                }
+                                
+                                
+                                if(top.right != null){
+                                        queue.add (top.right);
+                                }
+                                else{
+                                        top.right = newNode;
+                                        break;
+                                }
+                        }
+                        
+                }
+        }
+        
+        
+        
+        public static void levelOrderTraversal (Node root){
+
+                Queue < Node > que = new LinkedList<>();
+                que.add(root);
+                
+                while(  !que.isEmpty()  ){
+                        Node topmost = que.poll();
+                        System.out.println(topmost.data);
+                        
+                        if(topmost.left != null){
+                                que.add(topmost.left);
+                        }
+                        
+                        if(topmost.right != null){
+                                que.add(topmost.right);
+                        }
+                }
+
+        }
+     
+}
+
+output = Finished in 59 ms
+new Node is1038
+100
+200
+300
+1038
