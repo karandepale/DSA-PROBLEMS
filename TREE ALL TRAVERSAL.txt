@@ -1,0 +1,153 @@
+class Node{
+        Node left;
+        int data;
+        Node right;
+
+        
+        Node(int data){
+                this.data = data;
+        }
+}
+
+class Main{
+        public static void main (String[] args){
+                
+                Node root = new Node(1);
+                root.left = new Node(2);
+                root.right = new Node(3);
+                root.left.left = new Node(4);
+                root.left.right = new Node(5);
+
+                levelOrderInsertion(root , 637);
+                
+                System.out.println("new Node addede in level oreder insertion is: " + root.left.left.data);
+                System.out.println();
+                
+                System.out.println("level order travrsal");
+                levelOrderTraversal(root);
+                
+                System.out.println();
+                
+                System.out.println("pre order travaersal");
+                preOrderTraversal(root);
+                
+                System.out.println();
+                
+                System.out.println("inorder traversal");
+                inOrderTraversal(root);
+                
+                System.out.println();
+                
+                System.out.println("post order traversal ");
+                postOrderTraversal(root);
+        }
+        
+        public static void levelOrderInsertion ( Node root , int k){
+                Node newNode = new Node(k);
+                Node temp = root;
+                
+                if(temp == null){
+                        temp = new Node(k);
+                }
+                
+                
+                else{
+                        Queue < Node > queue = new LinkedList <>();
+                        queue.add(temp);
+                        
+                        while( !queue.isEmpty() ){
+                               Node top = queue.poll();
+                                
+                                if(top.left != null){
+                                        queue.add(top.left);
+                                }
+                                else{
+                                        top.left = newNode;
+                                        break;
+                                }
+                                
+                                
+                                if(top.right != null){
+                                        queue.add (top.right);
+                                }
+                                else{
+                                        top.right = newNode;
+                                        break;
+                                }
+                        }
+                        
+                }
+        }
+        
+        
+        
+        public static void levelOrderTraversal (Node root){
+
+                Queue < Node > que = new LinkedList<>();
+                que.add(root);
+                
+                while(  !que.isEmpty()  ){
+                        Node topmost = que.poll();
+                        System.out.print(topmost.data + "  ");
+                        
+                        if(topmost.left != null){
+                                que.add(topmost.left);
+                        }
+                        
+                        if(topmost.right != null){
+                                que.add(topmost.right);
+                        }
+                }
+
+        }
+        
+        
+        public static void preOrderTraversal ( Node root ){
+                if(root == null){
+                        return;
+                }
+                
+                
+                System.out.print(root.data + "  ");
+                preOrderTraversal(root.left);
+                preOrderTraversal(root.right);
+        }
+        
+        
+        public static void inOrderTraversal ( Node root ){
+                if(root == null){
+                        return;
+                }
+                
+                inOrderTraversal(root.left);
+                System.out.print(root.data + "  ");
+                inOrderTraversal(root.right);
+                
+        }
+        
+        
+        public static void postOrderTraversal ( Node root ){
+                if(root == null){
+                        return;
+                }
+                
+                postOrderTraversal(root.left);
+                postOrderTraversal(root.right);
+                System.out.print(root.data + "  ");
+        }
+     
+}
+
+
+
+
+new Node addede in level oreder insertion is: 4
+
+level order travrsal
+1  2  3  4  5  637  
+pre order travaersal
+1  2  4  5  3  637  
+inorder traversal
+4  2  5  1  637  3  
+post order traversal 
+4  5  2  637  3  1  
