@@ -1,0 +1,71 @@
+//====================== STACK USING LINKED LIST ======================
+class stack {
+         Node head ;
+        class Node {
+                int data;
+                Node next;
+                
+                Node (int data){
+                        this.data = data;
+                }
+        }
+        
+        
+        stack(){
+                head = null;
+        }
+        
+        
+        public int pop(){
+                if(head == null){
+                        return -1;
+                }
+                int top = head.data;
+                head = head.next;
+                return top;
+        }
+        
+        public void push ( int value ){
+       
+                Node newNode = new Node(value);
+                newNode.next = head;
+                head = newNode;
+        }
+        
+        
+
+        public static void main(String[] args){
+                stack obj = new stack();
+                
+                obj.push(20);
+                obj.push(50);
+                 obj.push(80);
+                 obj.push(40);
+                 obj.push(60);
+                 obj.push(75);
+                
+                System.out.println("removed element is:" + obj.pop()  );
+                 System.out.println("removed element is:" + obj.pop()  );
+                
+                obj.push(10);
+        
+                printList(obj.head);
+        }
+        
+        
+        public static void printList ( Node head ){
+                if(head == null){
+                        return;
+                }
+                while(head != null){
+                        System.out.print(head.data + " " );
+                        head = head.next;
+                }
+        }
+
+}
+
+output = 
+removed element is:75
+removed element is:60
+10 40 80 50 20 
