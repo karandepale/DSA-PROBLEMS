@@ -1,0 +1,58 @@
+//==========================  STACK USING QUEUE=======================
+class Main{
+  static class queue{
+      static Stack < Integer > st1 = new Stack <Integer> ();
+      static  Stack < Integer > st2 = new Stack <Integer> ();
+        
+       public static void enQueue ( int value ){
+                
+                while ( !st1.isEmpty() ){
+                        st2.push( st1.pop() );
+                }
+                
+                st1.push(value);
+                
+                while( !st2.isEmpty() ){
+                        st1.push( st2.pop() );
+                }
+        }
+        
+       public  static int deQueue (){
+                if(st1 == null){
+                        return -1;
+                }
+                
+                int top = st1.pop();
+                return top;
+        }
+        
+
+}
+
+public static void main(String[] args){
+        
+        queue obj = new queue();
+        obj.enQueue(10);
+        obj.enQueue(20);
+        obj.enQueue(30);
+        obj.enQueue(40);
+        obj.enQueue(50);
+        
+        
+        System.out.println(obj.deQueue() );
+          System.out.println(obj.deQueue() );
+         System.out.println(obj.deQueue() );
+         System.out.println(obj.deQueue() );
+         System.out.println(obj.deQueue() );
+        
+}
+
+
+}
+
+output = 
+10
+20
+30
+40
+50
